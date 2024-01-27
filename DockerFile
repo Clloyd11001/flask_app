@@ -1,0 +1,25 @@
+# All docker files need this, it tells the builder what syntax and location of syntax file
+
+# syntax=docker/dockerfile:1
+
+# No need to create our own images, this allows us to inherit a base image
+FROM python:3.9-slim-buster
+
+# Telling docker which folder to use for operations, "a directory contained within our container image"
+WORKDIR /python-docker
+
+# Copies over requirements.txt, pip install then installs all the dependencies matched in the file
+COPY requirements.txt requirements.txt
+COPY tmp/test.txt tmp/test.txt
+RUN pip3 install --upgrade pip==23.3.2
+RUN pip3 install -r requirements.txt
+
+# Copies remainder of files in local directory
+COPY . .
+
+EXPOSE 5150
+
+# We tell Docker how to run, we specify it's python, a module ("m"), a flask app and to run it, we then pass in the host port
+# I could alter to specify port 5150 for the excercise?
+# Can specify port at the end of the command
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
