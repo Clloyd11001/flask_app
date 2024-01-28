@@ -1,10 +1,14 @@
 from flask import Flask, render_template, request
+import psutil
 
 app = Flask(__name__)
+
+new_session = True
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    global new_session
     loaded_text = ""
 
     if request.method == 'POST':
@@ -20,7 +24,11 @@ def index():
         except FileNotFoundError:
             print("Could not find file to read from")
 
-    # textbox.mytext.data = ""
+        if new_session:
+            print("hello")
+            loaded_text = ""
+            new_session = False
+
     return render_template('index.html', loaded_text=loaded_text)
 
 
