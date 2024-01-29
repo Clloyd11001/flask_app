@@ -20,6 +20,6 @@ COPY . .
 EXPOSE 5150
 
 # We tell Docker how to run, we specify it's python, a module ("m"), a flask app and to run it, we then pass in the host port
-# I could alter to specify port 5150 for the excercise?
+# --host=0.0.0.0 allows external connections
 # Can specify port at the end of the command
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=5150"]
