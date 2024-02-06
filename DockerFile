@@ -10,7 +10,8 @@ WORKDIR /python-docker
 
 # Copies over requirements.txt, pip install then installs all the dependencies matched in the file
 COPY requirements.txt requirements.txt
-COPY tmp/test.txt tmp/test.txt
+
+# Rather than copying it over, using python can run a bash command
 RUN pip3 install --upgrade pip==23.3.2
 RUN pip3 install -r requirements.txt
 
