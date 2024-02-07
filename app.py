@@ -13,7 +13,7 @@ def index():
 
     if request.method == 'POST':
         textbox = request.form['textbox']
-        # This creates
+        # This creates the file before writing ("i tested by viewing inside docker container")
         with open('/tmp/test.txt', 'w') as file:
             file.write(textbox)
         print('Value saved to a file')
@@ -21,7 +21,6 @@ def index():
     elif request.method == 'GET':
         try:
             with open('/tmp/test.txt', 'r') as file:
-                # handle formatting in the html
                 loaded_text = file.read()
         except FileNotFoundError:
             print("Could not find file to read from")

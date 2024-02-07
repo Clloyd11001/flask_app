@@ -1,11 +1,3 @@
-header {
-    background-color: #DFB887;
-    height: 35px;
-    width: 100%;
-    opacity: .9;
-    margin-bottom: 10px;
-}
-
 textarea {
     padding-left: 0;
     padding-top: 0;
@@ -17,7 +9,7 @@ textarea {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 40px;
     border-radius: 15px;
-    -webkit-border-radius: /5px;
+    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
 
 }
@@ -34,15 +26,15 @@ input[type=text] {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 40px;
     border-radius: 15px;
-    -webkit-border-radius: /5px;
+    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
 
 }
 
 /* 100vh sets 100% screen height, 100vw for width */
 body {
-    height: 100vh;
-    width: 100vw;
+    height: 94.8vh;
+    width: 96vw;
     text-align: center;
 
     background-image: linear-gradient(#DCC7AA, #ed8a63);
@@ -52,7 +44,7 @@ button {
     color: black;
     border: none;
     border-radius: 15px;
-    margin-bottom: 5vh;
+
     width: 25vw;
     height: 5vh;
     font-size: 30px;
@@ -74,18 +66,19 @@ h1 {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 60px;
+    background-color: #C7DCDA;
+    border: #efe099 10px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+
+    text-align: center;
+    border-radius: 25px;
+
+
 }
 
 font {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 40px;
     font-weight: bold;
-}
-
-.userInput {
-    margin: 1px;
-    padding: 1px;
-    width: 500px;
-    height: 300px;
-    resize: none;
 }

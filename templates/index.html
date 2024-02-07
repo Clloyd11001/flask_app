@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <title>Flask App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
-    <script src="{{ url_for('static', filename='js/index.js') }}" type="module"></script>
 
 </head>
 
-<body>
-    <h1>Welcome to the Flask App</h1>
+<h1>Welcome to the Flask App</h1>
 
+<body>
 
     <font>
         <p>Please enter any free form text!</p>
@@ -29,11 +28,10 @@
         <font><label for="loaded_text"></label></font><br>
         <!-- this finally allows me to create an array from file.read -->
         <textarea id="text" name="loaded_text" rows="4" cols="50"> {{loaded_text}} </textarea><br>
-        <div>
-            <button>
-                Load
-            </button>
-        </div>
+        <button>
+            Load
+        </button>
+
 
     </form>
 
