@@ -4,31 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+    <script src="{{ url_for('static', filename='js/index.js') }}" type="module"></script>
+
 </head>
 
 <body>
-    <h1>Welcome to Flask App</h1>
+    <h1>Welcome to the Flask App</h1>
 </body>
 
-<!-- "form action-->
+<font>
+    <p>Please enter any free form text</p>
+</font>
 
 <form action="/" method="post">
-    <label for="textbox">Please enter any kind of freeform text, excluding numbers and other
-        characters</label><br>
-    <input type="text" id="textbox" name="textbox"><br>
-    <input type="submit" value="Save">
+    <font><label for="textbox"></label><br></font>
+    <textarea type="text" id="textbox" name="textbox"></textarea> <br>
+    <button>Submit</button>
 </form>
 
 <!-- value is set using jinja templating and will display loaded_text variable, readonly makes it readonly obviously-->
 <!-- loaded_text reads file from file.read -->
 <form action="/" method="get">
-    <label for="loaded_text">Loaded Text:</label><br>
-    <input type="text" id="loaded_text" name="loaded_text" value="{{loaded_text}}" readonly><br>
-    <input type="submit" value="Load">
+    <font><label for="loaded_text"></label></font><br>
+    <textarea id="text" name="loaded_text" rows="4" cols="50"> {{loaded_text}} </textarea><br>
+    <button>Load</button>
 </form>
 
 
-<p>If you click the "Save" button, the form-data will be sent to a file called "/tmp/test.txt".</p>
-<p>Clicking on "Load" will bring back the text previously saved.</p>
 
 </html>

@@ -13,6 +13,7 @@ def index():
 
     if request.method == 'POST':
         textbox = request.form['textbox']
+        # This creates
         with open('/tmp/test.txt', 'w') as file:
             file.write(textbox)
         print('Value saved to a file')
@@ -20,7 +21,8 @@ def index():
     elif request.method == 'GET':
         try:
             with open('/tmp/test.txt', 'r') as file:
-                loaded_text = file.read()
+                # what if i read this in as an array so it wouldnt just be a long string
+                loaded_text = file.read().splitlines(True)
         except FileNotFoundError:
             print("Could not find file to read from")
 
