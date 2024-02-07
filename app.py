@@ -21,13 +21,12 @@ def index():
     elif request.method == 'GET':
         try:
             with open('/tmp/test.txt', 'r') as file:
-                # what if i read this in as an array so it wouldnt just be a long string
-                loaded_text = file.read().splitlines(True)
+                # handle formatting in the html
+                loaded_text = file.read()
         except FileNotFoundError:
             print("Could not find file to read from")
 
         if new_session:
-            print("hello")
             loaded_text = ""
             new_session = False
 

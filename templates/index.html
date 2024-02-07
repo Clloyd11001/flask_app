@@ -11,26 +11,33 @@
 
 <body>
     <h1>Welcome to the Flask App</h1>
+
+
+    <font>
+        <p>Please enter any free form text!</p>
+    </font>
+
+    <form action="/" method="post">
+        <font><label for="textbox"></label><br></font>
+        <textarea type="text" id="textbox" name="textbox"></textarea> <br>
+        <button>Submit</button>
+    </form>
+
+    <!-- value is set using jinja templating and will display loaded_text variable, readonly makes it readonly obviously-->
+    <!-- loaded_text reads file from file.read -->
+    <form action="/" method="get">
+        <font><label for="loaded_text"></label></font><br>
+        <!-- this finally allows me to create an array from file.read -->
+        <textarea id="text" name="loaded_text" rows="4" cols="50"> {{loaded_text}} </textarea><br>
+        <div>
+            <button>
+                Load
+            </button>
+        </div>
+
+    </form>
+
 </body>
-
-<font>
-    <p>Please enter any free form text</p>
-</font>
-
-<form action="/" method="post">
-    <font><label for="textbox"></label><br></font>
-    <textarea type="text" id="textbox" name="textbox"></textarea> <br>
-    <button>Submit</button>
-</form>
-
-<!-- value is set using jinja templating and will display loaded_text variable, readonly makes it readonly obviously-->
-<!-- loaded_text reads file from file.read -->
-<form action="/" method="get">
-    <font><label for="loaded_text"></label></font><br>
-    <textarea id="text" name="loaded_text" rows="4" cols="50"> {{loaded_text}} </textarea><br>
-    <button>Load</button>
-</form>
-
 
 
 </html>
